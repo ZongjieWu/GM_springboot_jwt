@@ -24,12 +24,12 @@ public class SwaggerConfig {
     public Docket createRestApi() {
 
         //用户设置局部token 方式1 //已用下面方式2更通用
-        ParameterBuilder ticketPar = new ParameterBuilder();
-        List<Parameter> pars = new ArrayList<Parameter>();
-        ticketPar.name("token").description("用户的认证标识")
-                .modelRef(new ModelRef("string")).parameterType("header")
-                .required(false).build(); //header中的ticket参数非必填，传空也可以
-        pars.add(ticketPar.build());    //根据每个方法名也知道当前方法在设置什么参数
+//        ParameterBuilder ticketPar = new ParameterBuilder();
+//        List<Parameter> pars = new ArrayList<Parameter>();
+//        ticketPar.name("token").description("用户的认证标识")
+//                .modelRef(new ModelRef("string")).parameterType("header")
+//                .required(false).build(); //header中的ticket参数非必填，传空也可以
+//        pars.add(ticketPar.build());    //根据每个方法名也知道当前方法在设置什么参数
 
 
         return new Docket(DocumentationType.SWAGGER_2)
@@ -40,9 +40,9 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any())
                 .build()
                 //配置认证的暂时取消
-//                .securitySchemes(securitySchemes())
-//                .securityContexts(securityContexts());
-                .globalOperationParameters(pars);
+                .securitySchemes(securitySchemes())
+                .securityContexts(securityContexts());
+//                .globalOperationParameters(pars);
 //        return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class)).build();
     }
     //构建 api文档的详细信息函数,注意这里的注解引用的是哪个
