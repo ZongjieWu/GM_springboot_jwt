@@ -1,3 +1,0 @@
-生成asciidoc和html、pdf的maven命令
-mvn asciidoctor:process-asciidoc
-mvn generate-resources

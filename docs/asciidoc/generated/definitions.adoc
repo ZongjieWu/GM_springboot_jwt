@@ -1,6 +1,6 @@
 
 [[_definitions]]
-== 定义
+== Definitions
 
 [[_result]]
 === Result
@@ -9,19 +9,15 @@
 
 [options="header", cols=".^3a,.^11a,.^4a"]
 |===
-|名称|说明|类型
+|Name|Description|Schema
 |**code** +
-__可选__|返回码 +
-**样例** : `0`|integer (int32)
+__optional__|返回码|integer (int32)
 |**count** +
-__可选__|数据的总条数(此字段用于分页的时候用) +
-**样例** : `0`|integer (int64)
+__optional__|数据的总条数(此字段用于分页的时候用)|integer (int64)
 |**data** +
-__可选__|返回数据 +
-**样例** : `"object"`|object
+__optional__|返回数据|object
 |**msg** +
-__可选__|返回消息 +
-**样例** : `"string"`|string
+__optional__|返回消息|string
 |===
 
 
@@ -32,19 +28,15 @@ __可选__|返回消息 +
 
 [options="header", cols=".^3a,.^11a,.^4a"]
 |===
-|名称|说明|类型
+|Name|Description|Schema
 |**code** +
-__可选__|返回码 +
-**样例** : `0`|integer (int32)
+__optional__|返回码|integer (int32)
 |**count** +
-__可选__|数据的总条数(此字段用于分页的时候用) +
-**样例** : `0`|integer (int64)
+__optional__|数据的总条数(此字段用于分页的时候用)|integer (int64)
 |**data** +
-__可选__|返回数据 +
-**样例** : `[ "<<_saasuserbaseinforesponsevo>>" ]`|< <<_saasuserbaseinforesponsevo,SaasUserBaseInfoResponseVo>> > array
+__optional__|返回数据|< <<_saasuserbaseinforesponsevo,SaasUserBaseInfoResponseVo>> > array
 |**msg** +
-__可选__|返回消息 +
-**样例** : `"string"`|string
+__optional__|返回消息|string
 |===
 
 
@@ -55,19 +47,15 @@ __可选__|返回消息 +
 
 [options="header", cols=".^3a,.^11a,.^4a"]
 |===
-|名称|说明|类型
+|Name|Description|Schema
 |**code** +
-__可选__|返回码 +
-**样例** : `0`|integer (int32)
+__optional__|返回码|integer (int32)
 |**count** +
-__可选__|数据的总条数(此字段用于分页的时候用) +
-**样例** : `0`|integer (int64)
+__optional__|数据的总条数(此字段用于分页的时候用)|integer (int64)
 |**data** +
-__可选__|返回数据 +
-**样例** : `[ "<<_saasuserpermissionlist>>" ]`|< <<_saasuserpermissionlist,SaasUserPermissionList>> > array
+__optional__|返回数据|< <<_saasuserpermissionlist,SaasUserPermissionList>> > array
 |**msg** +
-__可选__|返回消息 +
-**样例** : `"string"`|string
+__optional__|返回消息|string
 |===
 
 
@@ -78,19 +66,15 @@ __可选__|返回消息 +
 
 [options="header", cols=".^3a,.^11a,.^4a"]
 |===
-|名称|说明|类型
+|Name|Description|Schema
 |**code** +
-__可选__|返回码 +
-**样例** : `0`|integer (int32)
+__optional__|返回码|integer (int32)
 |**count** +
-__可选__|数据的总条数(此字段用于分页的时候用) +
-**样例** : `0`|integer (int64)
+__optional__|数据的总条数(此字段用于分页的时候用)|integer (int64)
 |**data** +
-__可选__|返回数据 +
-**样例** : `[ "<<_saasuserroletype>>" ]`|< <<_saasuserroletype,SaasUserRoleType>> > array
+__optional__|返回数据|< <<_saasuserroletype,SaasUserRoleType>> > array
 |**msg** +
-__可选__|返回消息 +
-**样例** : `"string"`|string
+__optional__|返回消息|string
 |===
 
 
@@ -101,19 +85,15 @@ __可选__|返回消息 +
 
 [options="header", cols=".^3a,.^11a,.^4a"]
 |===
-|名称|说明|类型
+|Name|Description|Schema
 |**code** +
-__可选__|返回码 +
-**样例** : `0`|integer (int32)
+__optional__|返回码|integer (int32)
 |**count** +
-__可选__|数据的总条数(此字段用于分页的时候用) +
-**样例** : `0`|integer (int64)
+__optional__|数据的总条数(此字段用于分页的时候用)|integer (int64)
 |**data** +
-__可选__|返回数据 +
-**样例** : <<_saasuserbaseinforesponsevo>>|<<_saasuserbaseinforesponsevo,SaasUserBaseInfoResponseVo>>
+__optional__|返回数据|<<_saasuserbaseinforesponsevo,SaasUserBaseInfoResponseVo>>
 |**msg** +
-__可选__|返回消息 +
-**样例** : `"string"`|string
+__optional__|返回消息|string
 |===
 
 
@@ -124,56 +104,52 @@ __可选__|返回消息 +
 
 [options="header", cols=".^3a,.^11a,.^4a"]
 |===
-|名称|说明|类型
+|Name|Description|Schema
 |**code** +
-__可选__|返回码 +
-**样例** : `0`|integer (int32)
+__optional__|返回码|integer (int32)
 |**count** +
-__可选__|数据的总条数(此字段用于分页的时候用) +
-**样例** : `0`|integer (int64)
+__optional__|数据的总条数(此字段用于分页的时候用)|integer (int64)
 |**data** +
-__可选__|返回数据 +
-**样例** : <<_saasuserrolepermission>>|<<_saasuserrolepermission,SaasUserRolePermission>>
+__optional__|返回数据|<<_saasuserrolepermission,SaasUserRolePermission>>
 |**msg** +
-__可选__|返回消息 +
-**样例** : `"string"`|string
+__optional__|返回消息|string
 |===
 
 
 [[_saasuser]]
 === SaasUser
 
-[options="header", cols=".^3a,.^11a,.^4a"]
+[options="header", cols=".^3a,.^4a"]
 |===
-|名称|说明|类型
+|Name|Schema
 |**addTime** +
-__可选__|**样例** : `"string"`|string (date-time)
+__optional__|string (date-time)
 |**addr** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |**email** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |**headImg** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |**id** +
-__可选__|**样例** : `0`|integer (int64)
+__optional__|integer (int64)
 |**idCard** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |**modifyTime** +
-__可选__|**样例** : `"string"`|string (date-time)
+__optional__|string (date-time)
 |**name** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |**phone** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |**pwd** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |**saasUserPermissionList** +
-__可选__|**样例** : `[ "<<_saasuserpermissionlist>>" ]`|< <<_saasuserpermissionlist,SaasUserPermissionList>> > array
+__optional__|< <<_saasuserpermissionlist,SaasUserPermissionList>> > array
 |**saasUserRoleId** +
-__可选__|**样例** : `0`|integer (int64)
+__optional__|integer (int64)
 |**saasUserRoleName** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |**status** +
-__可选__|**样例** : `0`|integer (int32)
+__optional__|integer (int32)
 |===
 
 
@@ -184,110 +160,100 @@ __可选__|**样例** : `0`|integer (int32)
 
 [options="header", cols=".^3a,.^11a,.^4a"]
 |===
-|名称|说明|类型
+|Name|Description|Schema
 |**addTime** +
-__可选__|添加时间 +
-**样例** : `"string"`|string (date-time)
+__optional__|添加时间|string (date-time)
 |**addr** +
-__可选__|联系地址 +
-**样例** : `"string"`|string
+__optional__|联系地址|string
 |**email** +
-__可选__|邮箱 +
-**样例** : `"string"`|string
+__optional__|邮箱|string
 |**headImg** +
-__可选__|头像 +
-**样例** : `"string"`|string
+__optional__|头像|string
 |**id** +
-__可选__|平台管理员表id +
-**样例** : `0`|integer (int64)
+__optional__|平台管理员表id|integer (int64)
 |**idCard** +
-__可选__|身份证 +
-**样例** : `"string"`|string
+__optional__|身份证|string
 |**modifyTime** +
-__可选__|修改时间 +
-**样例** : `"string"`|string (date-time)
+__optional__|修改时间|string (date-time)
 |**name** +
-__可选__|名称 +
-**样例** : `"string"`|string
+__optional__|名称|string
 |**phone** +
-__可选__|电话 +
-**样例** : `"string"`|string
+__optional__|电话|string
 |**saasUserPermissionList** +
-__可选__|**样例** : `[ "<<_saasuserpermissionlist>>" ]`|< <<_saasuserpermissionlist,SaasUserPermissionList>> > array
+__optional__||< <<_saasuserpermissionlist,SaasUserPermissionList>> > array
 |**saasUserRoleId** +
-__可选__|管理员角色id +
-**样例** : `0`|integer (int64)
+__optional__|管理员角色id|integer (int64)
 |**saasUserRoleName** +
-__可选__|**样例** : `"string"`|string
+__optional__||string
 |**token** +
-__可选__|**样例** : `"string"`|string
+__optional__||string
 |===
 
 
 [[_saasuserpermissionlist]]
 === SaasUserPermissionList
 
-[options="header", cols=".^3a,.^11a,.^4a"]
+[options="header", cols=".^3a,.^4a"]
 |===
-|名称|说明|类型
+|Name|Schema
 |**addTime** +
-__可选__|**样例** : `"string"`|string (date-time)
+__optional__|string (date-time)
 |**descript** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |**iconPath** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |**id** +
-__可选__|**样例** : `0`|integer (int64)
+__optional__|integer (int64)
 |**modifyTime** +
-__可选__|**样例** : `"string"`|string (date-time)
+__optional__|string (date-time)
 |**name** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |**parentId** +
-__可选__|**样例** : `0`|integer (int64)
+__optional__|integer (int64)
 |**requestPath** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |**saasUserPermissionList** +
-__可选__|**样例** : `[ "<<_saasuserpermissionlist>>" ]`|< <<_saasuserpermissionlist,SaasUserPermissionList>> > array
+__optional__|< <<_saasuserpermissionlist,SaasUserPermissionList>> > array
 |**sort** +
-__可选__|**样例** : `0`|integer (int32)
+__optional__|integer (int32)
 |===
 
 
 [[_saasuserrolepermission]]
 === SaasUserRolePermission
 
-[options="header", cols=".^3a,.^11a,.^4a"]
+[options="header", cols=".^3a,.^4a"]
 |===
-|名称|说明|类型
+|Name|Schema
 |**addTime** +
-__可选__|**样例** : `"string"`|string (date-time)
+__optional__|string (date-time)
 |**id** +
-__可选__|**样例** : `0`|integer (int64)
+__optional__|integer (int64)
 |**modifyTime** +
-__可选__|**样例** : `"string"`|string (date-time)
+__optional__|string (date-time)
 |**saasUserPermissionId** +
-__可选__|**样例** : `0`|integer (int64)
+__optional__|integer (int64)
 |**saasUserRoleId** +
-__可选__|**样例** : `0`|integer (int64)
+__optional__|integer (int64)
 |===
 
 
 [[_saasuserroletype]]
 === SaasUserRoleType
 
-[options="header", cols=".^3a,.^11a,.^4a"]
+[options="header", cols=".^3a,.^4a"]
 |===
-|名称|说明|类型
+|Name|Schema
 |**addTime** +
-__可选__|**样例** : `"string"`|string (date-time)
+__optional__|string (date-time)
 |**descript** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |**id** +
-__可选__|**样例** : `0`|integer (int64)
+__optional__|integer (int64)
 |**modifyTime** +
-__可选__|**样例** : `"string"`|string (date-time)
+__optional__|string (date-time)
 |**name** +
-__可选__|**样例** : `"string"`|string
+__optional__|string
 |===
 
 

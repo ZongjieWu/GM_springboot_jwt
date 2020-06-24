@@ -8,7 +8,6 @@ import com.example.springbootmybatisplus.model.vo.request.saasuser.user.SaasUser
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 
 /**
  * <p>

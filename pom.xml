@@ -152,7 +152,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.19</version>
+            <!--<version>8.0.19</version>-->
         </dependency>
 
         <dependency>
@@ -243,7 +243,7 @@
                 </configuration>
             </plugin>
 
-
+            <!--swagger相关 start-->
             <plugin>
                 <groupId>io.github.swagger2markup</groupId>
                 <artifactId>swagger2markup-maven-plugin</artifactId>
@@ -309,13 +309,9 @@
                             <outputDirectory>docs/asciidoc/pdf</outputDirectory>
                         </configuration>
                     </execution>
-
                 </executions>
             </plugin>
-
-
-
-
+            <!--swagger相关 end-->
         </plugins>
     </build>
 

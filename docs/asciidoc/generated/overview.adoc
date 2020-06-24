@@ -2,28 +2,28 @@
 
 
 [[_overview]]
-== 概览
+== Overview
 用于做示例教程
 
 
-=== 版本信息
+=== Version information
 [%hardbreaks]
-__版本__ : 1.0
+__Version__ : 1.0
 
 
-=== 联系方式
+=== Contact information
 [%hardbreaks]
-__名字__ : ZongjieWu
-__邮箱__ : 2012293155@qq.com
+__Contact__ : ZongjieWu
+__Contact Email__ : 2012293155@qq.com
 
 
 === URI scheme
 [%hardbreaks]
-__域名__ : localhost:8083
-__基础路径__ : /
+__Host__ : localhost:8083
+__BasePath__ : /
 
 
-=== 标签
+=== Tags
 
 * 1.平台管理员 : 登入等接口
 * 2.平台管理员 : 添加、修改、删除、查询等接口
