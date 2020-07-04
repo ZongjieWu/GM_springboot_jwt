@@ -14,3 +14,5 @@ server:
   port: 8082
   tomcat:
       max-http-header-size: 8192
+  servlet:
+    context-path: /spring-boot

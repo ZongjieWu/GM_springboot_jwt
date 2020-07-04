@@ -68,7 +68,6 @@ public class SwaggerConfig {
      * ######################################
      **/
     private List<ApiKey> securitySchemes() {
-
         return new ArrayList(
                 Collections.singleton(new ApiKey("Authorization", "token", "header")));
     }
