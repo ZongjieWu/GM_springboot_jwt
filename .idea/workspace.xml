@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21da1fb9-c0d6-4708-a476-0e1a6e8240f7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/asciidoc/pdf/definitions.pdf" afterPath="$PROJECT_DIR$/docs/asciidoc/pdf/definitions.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/asciidoc/pdf/overview.pdf" afterPath="$PROJECT_DIR$/docs/asciidoc/pdf/overview.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/asciidoc/pdf/paths.pdf" afterPath="$PROJECT_DIR$/docs/asciidoc/pdf/paths.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/asciidoc/pdf/security.pdf" afterPath="$PROJECT_DIR$/docs/asciidoc/pdf/security.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootmybatisplus/config/MainCorsConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootmybatisplus/config/MainCorsConfig.java" />
-    </list>
+    <list default="true" id="21da1fb9-c0d6-4708-a476-0e1a6e8240f7" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -273,7 +266,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="1" />
     <option name="width" value="1935" />
@@ -735,7 +728,7 @@
       <workItem from="1593598717054" duration="4090000" />
       <workItem from="1593623330644" duration="833000" />
       <workItem from="1593711386873" duration="320000" />
-      <workItem from="1593882368910" duration="5324000" />
+      <workItem from="1593882368910" duration="5908000" />
     </task>
     <task id="LOCAL-00001" summary="提交profile多环境配置">
       <created>1589179715172</created>
@@ -780,10 +773,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115615000" />
+    <option name="totallyTimeSpent" value="116199000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="1" width="1935" height="1065" extended-state="1" />
+    <frame x="-8" y="1" width="1935" height="1065" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
