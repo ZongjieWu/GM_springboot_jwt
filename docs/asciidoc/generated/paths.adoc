@@ -1,1229 +1,1735 @@
 
 [[_paths]]
-== Paths
+== 资源
+
+[[_39a31fd0462f85b2d4f3edf40de45216]]
+=== 1.平台管理员
+登入等接口
+
 
 [[_addusingpost_1]]
-=== 登入
+==== 登入
 ....
 POST /admin/login
 ....
 
 
-==== Description
+===== 说明
 登入
 
 
-==== Parameters
+===== 参数
 
 [options="header", cols=".^2a,.^3a,.^9a,.^4a"]
 |===
-|Type|Name|Description|Schema
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
 |**Query**|**phone** +
-__required__|电话号码|string
+__必填__|电话号码|string
 |**Query**|**pwd** +
-__required__|密码|string
+__必填__|密码|string
 |===
 
 
-==== Responses
+===== 响应
 
 [options="header", cols=".^2a,.^14a,.^4a"]
 |===
-|HTTP Code|Description|Schema
+|HTTP代码|说明|类型
 |**200**|OK|<<_6808aa882c818db47bc2ed70acfe3dbd,Result«SaasUserBaseInfoResponseVo»>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
 |===
 
 
-==== Consumes
+===== 消耗
 
 * `application/json`
 
 
-==== Produces
+===== 生成
 
 * `\*/*`
 
 
-==== Tags
+===== HTTP请求示例
 
-* 1.平台管理员
+====== 请求 path
+----
+/admin/login?phone=string&pwd=string
+----
 
 
-==== Security
+====== 请求 header
+[source,json]
+----
+"string"
+----
 
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : {
+    "addTime" : "string",
+    "addr" : "string",
+    "email" : "string",
+    "headImg" : "string",
+    "id" : 0,
+    "idCard" : "string",
+    "modifyTime" : "string",
+    "name" : "string",
+    "phone" : "string",
+    "saasUserPermissionList" : [ {
+      "addTime" : "string",
+      "descript" : "string",
+      "iconPath" : "string",
+      "id" : 0,
+      "modifyTime" : "string",
+      "name" : "string",
+      "parentId" : 0,
+      "requestPath" : "string",
+      "saasUserPermissionList" : [ {
+        "addTime" : "string",
+        "descript" : "string",
+        "iconPath" : "string",
+        "id" : 0,
+        "modifyTime" : "string",
+        "name" : "string",
+        "parentId" : 0,
+        "requestPath" : "string",
+        "saasUserPermissionList" : [ "..." ],
+        "sort" : 0
+      } ],
+      "sort" : 0
+    } ],
+    "saasUserRoleId" : 0,
+    "saasUserRoleName" : "string",
+    "token" : "string"
+  },
+  "msg" : "string"
+}
+----
+
+
+[[_33d44b3bc59baa2d3032d25414e00c57]]
+=== 2.平台管理员
+添加、修改、删除、查询等接口
 
 
 [[_addusingpost]]
-=== 管理员添加
+==== 管理员添加
 ....
 POST /saasUser/add
 ....
 
 
-==== Description
+===== 说明
 管理员添加
 
 
-==== Parameters
+===== 参数
 
-[options="header", cols=".^2a,.^3a,.^4a"]
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
 |===
-|Type|Name|Schema
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
 |**Query**|**addTime** +
-__optional__|string (date-time)
+__可选__||string (date-time)
 |**Query**|**addr** +
-__optional__|string
+__可选__||string
 |**Query**|**email** +
-__optional__|string
+__可选__||string
 |**Query**|**headImg** +
-__optional__|string
+__可选__||string
 |**Query**|**id** +
-__optional__|integer (int64)
+__可选__||integer (int64)
 |**Query**|**idCard** +
-__optional__|string
+__可选__||string
 |**Query**|**modifyTime** +
-__optional__|string (date-time)
+__可选__||string (date-time)
 |**Query**|**name** +
-__optional__|string
+__可选__||string
 |**Query**|**phone** +
-__optional__|string
+__可选__||string
 |**Query**|**pwd** +
-__optional__|string
+__可选__||string
 |**Query**|**saasUserPermissionList[0].addTime** +
-__optional__|string (date-time)
+__可选__||string (date-time)
 |**Query**|**saasUserPermissionList[0].descript** +
-__optional__|string
+__可选__||string
 |**Query**|**saasUserPermissionList[0].iconPath** +
-__optional__|string
+__可选__||string
 |**Query**|**saasUserPermissionList[0].id** +
-__optional__|integer (int64)
+__可选__||integer (int64)
 |**Query**|**saasUserPermissionList[0].modifyTime** +
-__optional__|string (date-time)
+__可选__||string (date-time)
 |**Query**|**saasUserPermissionList[0].name** +
-__optional__|string
+__可选__||string
 |**Query**|**saasUserPermissionList[0].parentId** +
-__optional__|integer (int64)
+__可选__||integer (int64)
 |**Query**|**saasUserPermissionList[0].requestPath** +
-__optional__|string
+__可选__||string
 |**Query**|**saasUserPermissionList[0].sort** +
-__optional__|integer (int32)
+__可选__||integer (int32)
 |**Query**|**saasUserRoleId** +
-__optional__|integer (int64)
+__可选__||integer (int64)
 |**Query**|**saasUserRoleName** +
-__optional__|string
+__可选__||string
 |**Query**|**status** +
-__optional__|integer (int32)
+__可选__||integer (int32)
 |===
 
 
-==== Responses
+===== 响应
 
 [options="header", cols=".^2a,.^14a,.^4a"]
 |===
-|HTTP Code|Description|Schema
+|HTTP代码|说明|类型
 |**200**|OK|<<_result,Result>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
 |===
 
 
-==== Consumes
+===== 消耗
 
 * `application/json`
 
 
-==== Produces
+===== 生成
 
 * `\*/*`
 
 
-==== Tags
+===== HTTP请求示例
 
-* 2.平台管理员
+====== 请求 path
+----
+/saasUser/add
+----
 
 
-==== Security
+====== 请求 header
+[source,json]
+----
+"string"
+----
 
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
 
 
 [[_deleteusingpost]]
-=== 管理员删除
+==== 管理员删除
 ....
 POST /saasUser/delete
 ....
 
 
-==== Description
+===== 说明
 管理员删除
 
 
-==== Parameters
+===== 参数
 
 [options="header", cols=".^2a,.^3a,.^9a,.^4a"]
 |===
-|Type|Name|Description|Schema
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
 |**Query**|**id** +
-__required__|管理员表id|integer (int32)
+__必填__|管理员表id|integer (int32)
 |===
 
 
-==== Responses
+===== 响应
 
 [options="header", cols=".^2a,.^14a,.^4a"]
 |===
-|HTTP Code|Description|Schema
+|HTTP代码|说明|类型
 |**200**|OK|<<_result,Result>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
 |===
 
 
-==== Consumes
+===== 消耗
 
 * `application/json`
 
 
-==== Produces
+===== 生成
 
 * `\*/*`
 
 
-==== Tags
+===== HTTP请求示例
 
-* 2.平台管理员
+====== 请求 path
+----
+/saasUser/delete?id=0
+----
 
 
-==== Security
+====== 请求 header
+[source,json]
+----
+"string"
+----
 
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
 
 
 [[_detailusingget]]
-=== detail
+==== detail
 ....
 GET /saasUser/detail
 ....
 
 
-==== Parameters
+===== 参数
 
 [options="header", cols=".^2a,.^3a,.^9a,.^4a"]
 |===
-|Type|Name|Description|Schema
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
 |**Query**|**id** +
-__optional__|id|integer (int64)
+__可选__|id|integer (int64)
 |===
 
 
-==== Responses
+===== 响应
 
 [options="header", cols=".^2a,.^14a,.^4a"]
 |===
-|HTTP Code|Description|Schema
+|HTTP代码|说明|类型
 |**200**|OK|<<_saasuser,SaasUser>>
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
 |===
 
 
-==== Produces
+===== 生成
 
 * `\*/*`
 
 
-==== Tags
+===== HTTP请求示例
 
-* 2.平台管理员
+====== 请求 path
+----
+/saasUser/detail
+----
 
 
-==== Security
+====== 请求 header
+[source,json]
+----
+"string"
+----
 
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "addTime" : "string",
+  "addr" : "string",
+  "email" : "string",
+  "headImg" : "string",
+  "id" : 0,
+  "idCard" : "string",
+  "modifyTime" : "string",
+  "name" : "string",
+  "phone" : "string",
+  "pwd" : "string",
+  "saasUserPermissionList" : [ {
+    "addTime" : "string",
+    "descript" : "string",
+    "iconPath" : "string",
+    "id" : 0,
+    "modifyTime" : "string",
+    "name" : "string",
+    "parentId" : 0,
+    "requestPath" : "string",
+    "saasUserPermissionList" : [ {
+      "addTime" : "string",
+      "descript" : "string",
+      "iconPath" : "string",
+      "id" : 0,
+      "modifyTime" : "string",
+      "name" : "string",
+      "parentId" : 0,
+      "requestPath" : "string",
+      "saasUserPermissionList" : [ "..." ],
+      "sort" : 0
+    } ],
+    "sort" : 0
+  } ],
+  "saasUserRoleId" : 0,
+  "saasUserRoleName" : "string",
+  "status" : 0
+}
+----
 
 
 [[_pagingusingpost]]
-=== 分页查询管理员
+==== 分页查询管理员
 ....
 POST /saasUser/paging
 ....
 
 
-==== Description
+===== 说明
 分页查询管理员
 
 
-==== Parameters
+===== 参数
 
 [options="header", cols=".^2a,.^3a,.^9a,.^4a"]
 |===
-|Type|Name|Description|Schema
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
 |**Query**|**keywords** +
-__optional__|关键词|string
+__可选__|关键词|string
 |**Query**|**limit** +
-__required__|每页的条数|integer (int32)
+__必填__|每页的条数|integer (int32)
 |**Query**|**page** +
-__required__|当前页|integer (int32)
+__必填__|当前页|integer (int32)
 |===
 
 
-==== Responses
+===== 响应
 
 [options="header", cols=".^2a,.^14a,.^4a"]
 |===
-|HTTP Code|Description|Schema
+|HTTP代码|说明|类型
 |**200**|OK|<<_d81602790788bd27cb5a976bd576dfb6,Result«List«SaasUserBaseInfoResponseVo»»>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
 |===
 
 
-==== Consumes
+===== 消耗
 
 * `application/json`
 
 
-==== Produces
+===== 生成
 
 * `\*/*`
 
 
-==== Tags
+===== HTTP请求示例
 
-* 2.平台管理员
+====== 请求 path
+----
+/saasUser/paging?limit=0&page=0
+----
 
 
-==== Security
+====== 请求 header
+[source,json]
+----
+"string"
+----
 
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : [ {
+    "addTime" : "string",
+    "addr" : "string",
+    "email" : "string",
+    "headImg" : "string",
+    "id" : 0,
+    "idCard" : "string",
+    "modifyTime" : "string",
+    "name" : "string",
+    "phone" : "string",
+    "saasUserPermissionList" : [ {
+      "addTime" : "string",
+      "descript" : "string",
+      "iconPath" : "string",
+      "id" : 0,
+      "modifyTime" : "string",
+      "name" : "string",
+      "parentId" : 0,
+      "requestPath" : "string",
+      "saasUserPermissionList" : [ {
+        "addTime" : "string",
+        "descript" : "string",
+        "iconPath" : "string",
+        "id" : 0,
+        "modifyTime" : "string",
+        "name" : "string",
+        "parentId" : 0,
+        "requestPath" : "string",
+        "saasUserPermissionList" : [ "..." ],
+        "sort" : 0
+      } ],
+      "sort" : 0
+    } ],
+    "saasUserRoleId" : 0,
+    "saasUserRoleName" : "string",
+    "token" : "string"
+  } ],
+  "msg" : "string"
+}
+----
 
 
 [[_updateusingpost]]
-=== 管理员修改
+==== 管理员修改
 ....
 POST /saasUser/update
 ....
 
 
-==== Description
+===== 说明
 管理员修改
 
 
-==== Parameters
+===== 参数
 
 [options="header", cols=".^2a,.^3a,.^9a,.^4a"]
 |===
-|Type|Name|Description|Schema
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
 |**Query**|**addr** +
-__optional__|联系地址|string
+__可选__|联系地址|string
 |**Query**|**email** +
-__optional__|邮箱|string
+__可选__|邮箱|string
 |**Query**|**headImg** +
-__optional__|头像|string
+__可选__|头像|string
 |**Query**|**id** +
-__required__|平台管理员的表id|integer (int64)
+__必填__|平台管理员的表id|integer (int64)
 |**Query**|**idCard** +
-__optional__|身份证|string
+__可选__|身份证|string
 |**Query**|**name** +
-__optional__|名称|string
+__可选__|名称|string
 |**Query**|**phone** +
-__required__|电话|string
+__必填__|电话|string
 |**Query**|**pwd** +
-__required__|密码|string
+__必填__|密码|string
 |**Query**|**saasUserRoleId** +
-__required__|角色id|integer (int64)
+__必填__|角色id|integer (int64)
 |===
 
 
-==== Responses
+===== 响应
 
 [options="header", cols=".^2a,.^14a,.^4a"]
 |===
-|HTTP Code|Description|Schema
+|HTTP代码|说明|类型
 |**200**|OK|<<_result,Result>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
 |===
 
 
-==== Consumes
+===== 消耗
 
 * `application/json`
 
 
-==== Produces
+===== 生成
 
 * `\*/*`
 
 
-==== Tags
+===== HTTP请求示例
 
-* 2.平台管理员
+====== 请求 path
+----
+/saasUser/update?id=0&phone=string&pwd=string&saasUserRoleId=0
+----
 
 
-==== Security
+====== 请求 header
+[source,json]
+----
+"string"
+----
 
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
 
+===== HTTP响应示例
 
-[[_addusingpost_2]]
-=== 添加权限
-....
-POST /saasUserPermissionList/add
-....
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
 
 
-==== Description
-添加权限
-
-
-==== Parameters
-
-[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
-|===
-|Type|Name|Description|Schema
-|**Query**|**descript** +
-__required__|描述|string
-|**Query**|**iconPath** +
-__optional__|请求路径|string
-|**Query**|**name** +
-__required__|名称|string
-|**Query**|**parentId** +
-__required__|父级权限id|integer (int64)
-|**Query**|**requestPath** +
-__optional__|请求路径|string
-|**Query**|**sort** +
-__optional__|排序|integer (int32)
-|===
-
-
-==== Responses
-
-[options="header", cols=".^2a,.^14a,.^4a"]
-|===
-|HTTP Code|Description|Schema
-|**200**|OK|<<_result,Result>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
-|===
-
-
-==== Consumes
-
-* `application/json`
-
-
-==== Produces
-
-* `\*/*`
-
-
-==== Tags
-
-* 5.平台管理员权限
-
-
-==== Security
-
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_deleteusingpost_1]]
-=== 删除权限
-....
-POST /saasUserPermissionList/delete
-....
-
-
-==== Description
-删除权限
-
-
-==== Parameters
-
-[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
-|===
-|Type|Name|Description|Schema
-|**Query**|**id** +
-__required__|权限表id|integer (int32)
-|===
-
-
-==== Responses
-
-[options="header", cols=".^2a,.^14a,.^4a"]
-|===
-|HTTP Code|Description|Schema
-|**200**|OK|<<_result,Result>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
-|===
-
-
-==== Consumes
-
-* `application/json`
-
-
-==== Produces
-
-* `\*/*`
-
-
-==== Tags
-
-* 5.平台管理员权限
-
-
-==== Security
-
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_listbyroleidusingpost]]
-=== listByRoleId
-....
-POST /saasUserPermissionList/listByRoleId
-....
-
-
-==== Parameters
-
-[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
-|===
-|Type|Name|Description|Schema
-|**Query**|**saasUserRoleId** +
-__optional__|saasUserRoleId|integer (int64)
-|===
-
-
-==== Responses
-
-[options="header", cols=".^2a,.^14a,.^4a"]
-|===
-|HTTP Code|Description|Schema
-|**200**|OK|object
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
-|===
-
-
-==== Consumes
-
-* `application/json`
-
-
-==== Produces
-
-* `\*/*`
-
-
-==== Tags
-
-* 5.平台管理员权限
-
-
-==== Security
-
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_pagingusingpost_1]]
-=== 分页查询管理员权限
-....
-POST /saasUserPermissionList/paging
-....
-
-
-==== Description
-分页查询管理员权限
-
-
-==== Parameters
-
-[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
-|===
-|Type|Name|Description|Schema
-|**Query**|**keywords** +
-__optional__|搜索关键词|string
-|**Query**|**limit** +
-__required__|每页条数|integer (int32)
-|**Query**|**page** +
-__required__|当前页|integer (int32)
-|**Query**|**parentId** +
-__required__|父级权限id|integer (int64)
-|===
-
-
-==== Responses
-
-[options="header", cols=".^2a,.^14a,.^4a"]
-|===
-|HTTP Code|Description|Schema
-|**200**|OK|<<_bd8b051e5e5da36fa4aa5fde2ed82304,Result«List«SaasUserPermissionList»»>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
-|===
-
-
-==== Consumes
-
-* `application/json`
-
-
-==== Produces
-
-* `\*/*`
-
-
-==== Tags
-
-* 5.平台管理员权限
-
-
-==== Security
-
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_updateusingpost_1]]
-=== 修改权限
-....
-POST /saasUserPermissionList/update
-....
-
-
-==== Description
-修改权限
-
-
-==== Parameters
-
-[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
-|===
-|Type|Name|Description|Schema
-|**Query**|**descript** +
-__required__|描述|string
-|**Query**|**iconPath** +
-__optional__|请求路径|string
-|**Query**|**id** +
-__required__|权限表id|integer (int64)
-|**Query**|**name** +
-__required__|名称|string
-|**Query**|**parentId** +
-__required__|父级权限id|integer (int64)
-|**Query**|**requestPath** +
-__optional__|请求路径|string
-|**Query**|**sort** +
-__optional__|排序|integer (int32)
-|===
-
-
-==== Responses
-
-[options="header", cols=".^2a,.^14a,.^4a"]
-|===
-|HTTP Code|Description|Schema
-|**200**|OK|<<_result,Result>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
-|===
-
-
-==== Consumes
-
-* `application/json`
-
-
-==== Produces
-
-* `\*/*`
-
-
-==== Tags
-
-* 5.平台管理员权限
-
-
-==== Security
-
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_addusingpost_3]]
-=== add
-....
-POST /saasUserRolePermission/add
-....
-
-
-==== Parameters
-
-[options="header", cols=".^2a,.^3a,.^4a"]
-|===
-|Type|Name|Schema
-|**Query**|**addTime** +
-__optional__|string (date-time)
-|**Query**|**id** +
-__optional__|integer (int64)
-|**Query**|**modifyTime** +
-__optional__|string (date-time)
-|**Query**|**saasUserPermissionId** +
-__optional__|integer (int64)
-|**Query**|**saasUserRoleId** +
-__optional__|integer (int64)
-|===
-
-
-==== Responses
-
-[options="header", cols=".^2a,.^14a,.^4a"]
-|===
-|HTTP Code|Description|Schema
-|**200**|OK|<<_result,Result>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
-|===
-
-
-==== Consumes
-
-* `application/json`
-
-
-==== Produces
-
-* `\*/*`
-
-
-==== Tags
-
-* 4.平台角色权限控制器
-
-
-==== Security
-
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_deleteusingpost_2]]
-=== delete
-....
-POST /saasUserRolePermission/delete
-....
-
-
-==== Parameters
-
-[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
-|===
-|Type|Name|Description|Schema
-|**Query**|**id** +
-__required__|id|integer (int64)
-|===
-
-
-==== Responses
-
-[options="header", cols=".^2a,.^14a,.^4a"]
-|===
-|HTTP Code|Description|Schema
-|**200**|OK|<<_result,Result>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
-|===
-
-
-==== Consumes
-
-* `application/json`
-
-
-==== Produces
-
-* `\*/*`
-
-
-==== Tags
-
-* 4.平台角色权限控制器
-
-
-==== Security
-
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_detailusingget_1]]
-=== detail
-....
-GET /saasUserRolePermission/detail
-....
-
-
-==== Parameters
-
-[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
-|===
-|Type|Name|Description|Schema
-|**Query**|**id** +
-__required__|id|integer (int64)
-|===
-
-
-==== Responses
-
-[options="header", cols=".^2a,.^14a,.^4a"]
-|===
-|HTTP Code|Description|Schema
-|**200**|OK|<<_0da2f56c139f0adac96edef56e911548,Result«SaasUserRolePermission»>>
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
-|===
-
-
-==== Produces
-
-* `\*/*`
-
-
-==== Tags
-
-* 4.平台角色权限控制器
-
-
-==== Security
-
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_updateusingpost_2]]
-=== update
-....
-POST /saasUserRolePermission/update
-....
-
-
-==== Parameters
-
-[options="header", cols=".^2a,.^3a,.^4a"]
-|===
-|Type|Name|Schema
-|**Query**|**addTime** +
-__optional__|string (date-time)
-|**Query**|**id** +
-__optional__|integer (int64)
-|**Query**|**modifyTime** +
-__optional__|string (date-time)
-|**Query**|**saasUserPermissionId** +
-__optional__|integer (int64)
-|**Query**|**saasUserRoleId** +
-__optional__|integer (int64)
-|===
-
-
-==== Responses
-
-[options="header", cols=".^2a,.^14a,.^4a"]
-|===
-|HTTP Code|Description|Schema
-|**200**|OK|<<_result,Result>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
-|===
-
-
-==== Consumes
-
-* `application/json`
-
-
-==== Produces
-
-* `\*/*`
-
-
-==== Tags
-
-* 4.平台角色权限控制器
-
-
-==== Security
-
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
+[[_8a9c9d2aedffdc51f5418c671e2c34f7]]
+=== 3.平台管理员角色
+添加、修改、删除、查询等接口
 
 
 [[_addusingpost_4]]
-=== 平台管理员角色添加
+==== 平台管理员角色添加
 ....
 POST /saasUserRoleType/add
 ....
 
 
-==== Description
+===== 说明
 平台管理员角色添加
 
 
-==== Parameters
+===== 参数
 
 [options="header", cols=".^2a,.^3a,.^9a,.^4a"]
 |===
-|Type|Name|Description|Schema
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
 |**Query**|**descript** +
-__optional__|描述|string
+__可选__|描述|string
 |**Query**|**name** +
-__required__|名称|string
+__必填__|名称|string
 |===
 
 
-==== Responses
+===== 响应
 
 [options="header", cols=".^2a,.^14a,.^4a"]
 |===
-|HTTP Code|Description|Schema
+|HTTP代码|说明|类型
 |**200**|OK|<<_result,Result>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
 |===
 
 
-==== Consumes
+===== 消耗
 
 * `application/json`
 
 
-==== Produces
+===== 生成
 
 * `\*/*`
 
 
-==== Tags
+===== HTTP请求示例
 
-* 3.平台管理员角色
+====== 请求 path
+----
+/saasUserRoleType/add?name=string
+----
 
 
-==== Security
+====== 请求 header
+[source,json]
+----
+"string"
+----
 
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
 
 
 [[_deleteusingpost_3]]
-=== 平台管理员角色的删除
+==== 平台管理员角色的删除
 ....
 POST /saasUserRoleType/delete
 ....
 
 
-==== Description
+===== 说明
 平台管理员角色的删除
 
 
-==== Parameters
+===== 参数
 
 [options="header", cols=".^2a,.^3a,.^9a,.^4a"]
 |===
-|Type|Name|Description|Schema
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
 |**Query**|**id** +
-__required__|平台管理员角色表id|integer (int32)
+__必填__|平台管理员角色表id|integer (int32)
 |===
 
 
-==== Responses
+===== 响应
 
 [options="header", cols=".^2a,.^14a,.^4a"]
 |===
-|HTTP Code|Description|Schema
+|HTTP代码|说明|类型
 |**200**|OK|<<_result,Result>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
 |===
 
 
-==== Consumes
+===== 消耗
 
 * `application/json`
 
 
-==== Produces
+===== 生成
 
 * `\*/*`
 
 
-==== Tags
+===== HTTP请求示例
 
-* 3.平台管理员角色
+====== 请求 path
+----
+/saasUserRoleType/delete?id=0
+----
 
 
-==== Security
+====== 请求 header
+[source,json]
+----
+"string"
+----
 
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
 
 
 [[_listusingget]]
-=== 获取角色列表
+==== 获取角色列表
 ....
 GET /saasUserRoleType/list
 ....
 
 
-==== Description
+===== 说明
 获取角色列表
 
 
-==== Responses
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
+|===
+
+
+===== 响应
 
 [options="header", cols=".^2a,.^14a,.^4a"]
 |===
-|HTTP Code|Description|Schema
+|HTTP代码|说明|类型
 |**200**|OK|<<_4ac26851a62c3f174fa06f2974ee94d6,Result«List«SaasUserRoleType»»>>
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
 |===
 
 
-==== Produces
+===== 生成
 
 * `\*/*`
 
 
-==== Tags
+===== HTTP请求示例
 
-* 3.平台管理员角色
+====== 请求 path
+----
+/saasUserRoleType/list
+----
 
 
-==== Security
+====== 请求 header
+[source,json]
+----
+"string"
+----
 
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : [ {
+    "addTime" : "string",
+    "descript" : "string",
+    "id" : 0,
+    "modifyTime" : "string",
+    "name" : "string"
+  } ],
+  "msg" : "string"
+}
+----
 
 
 [[_updateusingpost_3]]
-=== 平台管理员角色修改
+==== 平台管理员角色修改
 ....
 POST /saasUserRoleType/update
 ....
 
 
-==== Description
+===== 说明
 平台管理员角色修改
 
 
-==== Parameters
+===== 参数
 
 [options="header", cols=".^2a,.^3a,.^9a,.^4a"]
 |===
-|Type|Name|Description|Schema
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
 |**Query**|**descript** +
-__optional__|描述|string
+__可选__|描述|string
 |**Query**|**id** +
-__required__|角色表id|integer (int64)
+__必填__|角色表id|integer (int64)
 |**Query**|**name** +
-__required__|名称|string
+__必填__|名称|string
 |===
 
 
-==== Responses
+===== 响应
 
 [options="header", cols=".^2a,.^14a,.^4a"]
 |===
-|HTTP Code|Description|Schema
+|HTTP代码|说明|类型
 |**200**|OK|<<_result,Result>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
 |===
 
 
-==== Consumes
+===== 消耗
 
 * `application/json`
 
 
-==== Produces
+===== 生成
 
 * `\*/*`
 
 
-==== Tags
+===== HTTP请求示例
 
-* 3.平台管理员角色
+====== 请求 path
+----
+/saasUserRoleType/update?id=0&name=string
+----
 
 
-==== Security
+====== 请求 header
+[source,json]
+----
+"string"
+----
 
-[options="header", cols=".^3a,.^4a,.^13a"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
 
 
 [[_updatepermissionusingpost]]
-=== 平台管理员角色权限的修改
+==== 平台管理员角色权限的修改
 ....
 POST /saasUserRoleType/updatePermission
 ....
 
 
-==== Description
+===== 说明
 平台管理员角色权限的修改
 
 
-==== Parameters
+===== 参数
 
 [options="header", cols=".^2a,.^3a,.^9a,.^4a"]
 |===
-|Type|Name|Description|Schema
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
 |**Query**|**authids** +
-__required__|权限id字符串,用逗号(,)隔开|string
+__必填__|权限id字符串,用逗号(,)隔开|string
 |**Query**|**rid** +
-__required__|角色id|integer (int32)
+__必填__|角色id|integer (int32)
 |===
 
 
-==== Responses
+===== 响应
 
 [options="header", cols=".^2a,.^14a,.^4a"]
 |===
-|HTTP Code|Description|Schema
+|HTTP代码|说明|类型
 |**200**|OK|<<_result,Result>>
-|**201**|Created|No Content
-|**401**|Unauthorized|No Content
-|**403**|Forbidden|No Content
-|**404**|Not Found|No Content
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
 |===
 
 
-==== Consumes
+===== 消耗
 
 * `application/json`
 
 
-==== Produces
+===== 生成
 
 * `\*/*`
 
 
-==== Tags
+===== HTTP请求示例
 
-* 3.平台管理员角色
+====== 请求 path
+----
+/saasUserRoleType/updatePermission?authids=string&rid=0
+----
 
 
-==== Security
+====== 请求 header
+[source,json]
+----
+"string"
+----
 
-[options="header", cols=".^3a,.^4a,.^13a"]
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_16cb9a81577e05962be4545496765b4e]]
+=== 4.平台角色权限控制器
+登入等接口
+
+
+[[_addusingpost_3]]
+==== add
+....
+POST /saasUserRolePermission/add
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
 |===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
+|**Query**|**addTime** +
+__可选__||string (date-time)
+|**Query**|**id** +
+__可选__||integer (int64)
+|**Query**|**modifyTime** +
+__可选__||string (date-time)
+|**Query**|**saasUserPermissionId** +
+__可选__||integer (int64)
+|**Query**|**saasUserRoleId** +
+__可选__||integer (int64)
 |===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/saasUserRolePermission/add
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_deleteusingpost_2]]
+==== delete
+....
+POST /saasUserRolePermission/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
+|**Query**|**id** +
+__必填__|id|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/saasUserRolePermission/delete?id=0
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_detailusingget_1]]
+==== detail
+....
+GET /saasUserRolePermission/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
+|**Query**|**id** +
+__必填__|id|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_0da2f56c139f0adac96edef56e911548,Result«SaasUserRolePermission»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/saasUserRolePermission/detail?id=0
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : {
+    "addTime" : "string",
+    "id" : 0,
+    "modifyTime" : "string",
+    "saasUserPermissionId" : 0,
+    "saasUserRoleId" : 0
+  },
+  "msg" : "string"
+}
+----
+
+
+[[_updateusingpost_2]]
+==== update
+....
+POST /saasUserRolePermission/update
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
+|**Query**|**addTime** +
+__可选__||string (date-time)
+|**Query**|**id** +
+__可选__||integer (int64)
+|**Query**|**modifyTime** +
+__可选__||string (date-time)
+|**Query**|**saasUserPermissionId** +
+__可选__||integer (int64)
+|**Query**|**saasUserRoleId** +
+__可选__||integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/saasUserRolePermission/update
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_bf8202746d10cea9dd90f690958e2972]]
+=== 5.平台管理员权限
+添加、修改、删除、查询等接口
+
+
+[[_addusingpost_2]]
+==== 添加权限
+....
+POST /saasUserPermissionList/add
+....
+
+
+===== 说明
+添加权限
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
+|**Query**|**descript** +
+__必填__|描述|string
+|**Query**|**iconPath** +
+__可选__|请求路径|string
+|**Query**|**name** +
+__必填__|名称|string
+|**Query**|**parentId** +
+__必填__|父级权限id|integer (int64)
+|**Query**|**requestPath** +
+__可选__|请求路径|string
+|**Query**|**sort** +
+__可选__|排序|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/saasUserPermissionList/add?descript=string&name=string&parentId=0
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_deleteusingpost_1]]
+==== 删除权限
+....
+POST /saasUserPermissionList/delete
+....
+
+
+===== 说明
+删除权限
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
+|**Query**|**id** +
+__必填__|权限表id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/saasUserPermissionList/delete?id=0
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_listbyroleidusingpost]]
+==== listByRoleId
+....
+POST /saasUserPermissionList/listByRoleId
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
+|**Query**|**saasUserRoleId** +
+__可选__|saasUserRoleId|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/saasUserPermissionList/listByRoleId
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_pagingusingpost_1]]
+==== 分页查询管理员权限
+....
+POST /saasUserPermissionList/paging
+....
+
+
+===== 说明
+分页查询管理员权限
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
+|**Query**|**keywords** +
+__可选__|搜索关键词|string
+|**Query**|**limit** +
+__必填__|每页条数|integer (int32)
+|**Query**|**page** +
+__必填__|当前页|integer (int32)
+|**Query**|**parentId** +
+__必填__|父级权限id|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_bd8b051e5e5da36fa4aa5fde2ed82304,Result«List«SaasUserPermissionList»»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/saasUserPermissionList/paging?limit=0&page=0&parentId=0
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : [ {
+    "addTime" : "string",
+    "descript" : "string",
+    "iconPath" : "string",
+    "id" : 0,
+    "modifyTime" : "string",
+    "name" : "string",
+    "parentId" : 0,
+    "requestPath" : "string",
+    "saasUserPermissionList" : [ {
+      "addTime" : "string",
+      "descript" : "string",
+      "iconPath" : "string",
+      "id" : 0,
+      "modifyTime" : "string",
+      "name" : "string",
+      "parentId" : 0,
+      "requestPath" : "string",
+      "saasUserPermissionList" : [ "..." ],
+      "sort" : 0
+    } ],
+    "sort" : 0
+  } ],
+  "msg" : "string"
+}
+----
+
+
+[[_updateusingpost_1]]
+==== 修改权限
+....
+POST /saasUserPermissionList/update
+....
+
+
+===== 说明
+修改权限
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Header**|**token** +
+__可选__|用户的认证标识|string
+|**Query**|**descript** +
+__必填__|描述|string
+|**Query**|**iconPath** +
+__可选__|请求路径|string
+|**Query**|**id** +
+__必填__|权限表id|integer (int64)
+|**Query**|**name** +
+__必填__|名称|string
+|**Query**|**parentId** +
+__必填__|父级权限id|integer (int64)
+|**Query**|**requestPath** +
+__可选__|请求路径|string
+|**Query**|**sort** +
+__可选__|排序|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/saasUserPermissionList/update?descript=string&id=0&name=string&parentId=0
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "count" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
 
 
 
