@@ -19,7 +19,6 @@
     </properties>
 
 
-
     <repositories>
         <repository>
             <id>spring-libs-milestone</id>
