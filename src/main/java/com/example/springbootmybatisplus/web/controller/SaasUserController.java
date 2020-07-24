@@ -46,17 +46,17 @@ public class SaasUserController {
     }
 
 
-    @ApiOperation(value = "管理员添加",notes = "管理员添加")
-    @SocketRole(value = "add_saasUser")
-    @PostMapping("/add")
-    public Result add(@Validated SaasUser saasUserAddRequestVo) {
-        SaasUser saasUser=BeanCopyTools.copy(saasUserAddRequestVo,SaasUser.class);
-        saasUser.setPwd(MD5Util.getMD5(AESUtil.encode(saasUser.getPwd(), AES_KEY)));
-        saasUser.setAddTime(new Date());
-        saasUser.setModifyTime(new Date());
-        saasUserService.save(saasUser);
-        return Result.retrunSucess();
-    }
+//    @ApiOperation(value = "管理员添加",notes = "管理员添加")
+//    @SocketRole(value = "add_saasUser")
+//    @PostMapping("/add")
+//    public Result add(@Validated SaasUser saasUserAddRequestVo) {
+//        SaasUser saasUser=BeanCopyTools.copy(saasUserAddRequestVo,SaasUser.class);
+//        saasUser.setPwd(MD5Util.getMD5(AESUtil.encode(saasUser.getPwd(), AES_KEY)));
+//        saasUser.setAddTime(new Date());
+//        saasUser.setModifyTime(new Date());
+//        saasUserService.save(saasUser);
+//        return Result.retrunSucess();
+//    }
 
     @ApiOperation(value = "管理员删除",notes = "管理员删除")
     @ApiImplicitParam(paramType = "query",name = "id",value = "管理员表id",required = true,dataType = "int")
