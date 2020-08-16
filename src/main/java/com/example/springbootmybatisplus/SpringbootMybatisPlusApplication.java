@@ -12,6 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @SpringBootApplication
 public class SpringbootMybatisPlusApplication {
 
+
 	public static void main(String[] args) {
 		ConcurrentHashMap concurrentHashMap;
 		SpringApplication.run(SpringbootMybatisPlusApplication.class, args);
