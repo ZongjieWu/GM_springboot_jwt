@@ -19,7 +19,7 @@ public class SaasUserLoginController {
     @Autowired
     private ISaasUserLoginService saasUserLoginService;
 
-    
+
     @ApiOperation(value = "登入",notes = "登入")
     @PostMapping("/login")
     public Result<SaasUserBaseInfoResponseVo> add(@Validated SaasUserLoginRequestVo loginRequestVo) {

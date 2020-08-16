@@ -58,15 +58,14 @@ public class SaasUserController {
         return Result.retrunSucess();
     }
 
-    @ApiOperation(value = "管理员删除",notes = "管理员删除")
-    @ApiImplicitParam(paramType = "query",name = "id",value = "管理员表id",required = true,dataType = "int")
-    @SocketRole(value = "delete_saasUser")
-    @PostMapping("delete")
-    public Result delete(@RequestParam Long id) {
-        saasUserService.removeById(id);
-        return Result.retrunSucess();
-    }
-
+//   @ApiOperation(value = "管理员删除",notes = "管理员删除")
+//    @ApiImplicitParam(paramType = "query",name = "id",value = "管理员表id",required = true,dataType = "int")
+//    @SocketRole(value = "delete_saasUser")
+//    @PostMapping("delete")
+//    public Result delete(@RequestParam Long id) {
+//        saasUserService.removeById(id);
+//        return Result.retrunSucess();
+//    }
     @ApiOperation(value = "管理员修改",notes = "管理员修改")
     @SocketRole(value = "update_saasUser")
     @PostMapping("update")
