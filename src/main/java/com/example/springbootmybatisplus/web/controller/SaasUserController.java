@@ -41,8 +41,8 @@ public class SaasUserController {
     private ISaasUserService saasUserService;
 
     @GetMapping("/detail")
-    public SaasUser detail(Long id){
-        return saasUserService.getById(id);
+    public Result detail(Long id){
+        return Result.retrunSucessMsgData(saasUserService.getById(id));
     }
 
 
